@@ -7,6 +7,7 @@
     <link href="~/Content/site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -26,7 +27,14 @@
             </div>
         </div>
     </div>
-
+    @if (ViewBag.ShowBackBar != null && ViewBag.ShowBackBar)
+    {
+        <div >
+            <div class="container">
+                @Html.ActionLink(" Retun To List", "Index", null, new {@class = "btn btn-default fa fa-chevron-left fa-lg" })
+            </div>
+        </div>
+    }
     <div class="container body-content">
         @RenderBody()
         <hr />
